@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+
+    <title>Fitness Center</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFbPGzATR0y1Gg85fC79-KfjDCEva5h7XORFxu-5Ndysl84yr-cjs8Lwis6A7FKIqr3x8&usqp=CAU" type="image/x-icon">
+
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="font-awesome.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">Fitness<em> Center</em></a>
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#features">About</a></li>
+                            <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
+                            <li class="scroll-to-section"><a href="calculator.html">Calorie Burn Calculator</a></li>
+                            <li class="main-button scroll-to-section"><a class="main-button scroll-to-section"
+                                    href="membership_form.html">Become a Member</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="gym-video.mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <h6>Push Limits, Gain Strength</h6>
+                <h2>Achieve More at Our <em>Gym</em></h2>
+
+
+                <div class="main-button scroll-to-section">
+                    <a href="membership_form.html">Become a member</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <section class="section" id="calories-calculator">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>Calculate <em>Calories</em></h2>
+                        <img src="line-dec.png" alt="">
+                        <p>Our calorie burn calculator is designed to help you stay informed and inspired. By providing
+                            accurate estimates based on your activity, intensity, and duration, it helps you track
+                            progress toward your fitness goals and beyond.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body" style="box-shadow: 10px 10px 10px rgba(0,0,0,0.5);">
+                            <h4 class="card-title text-center mb-4"></h4>
+                            <form id="calorie-form">
+                                <div class="form-group mb-3">
+                                    <label for="age" class="form-label">Age (years):</label>
+                                    <input type="number" id="age" class="form-control" placeholder="Enter your age"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="weight" class="form-label">Weight (kg):</label>
+                                    <input type="number" id="weight" class="form-control"
+                                        placeholder="Enter your weight" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="duration" class="form-label">Duration (minutes):</label>
+                                    <input type="number" id="duration" class="form-control"
+                                        placeholder="Enter duration of activity" required>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="activity" class="form-label">Activity Level:</label>
+                                    <select id="activity" class="form-control" required>
+                                        <option value="" disabled selected>Select activity level</option>
+                                        <option value="3">Light (e.g., walking)</option>
+                                        <option value="6">Moderate (e.g., jogging)</option>
+                                        <option value="8">Vigorous (e.g., running)</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-danger w-100" style="background-color: #ed563b;"
+                                    onclick="calculateCalories()">Calculate</button>
+                                    
+                            </form>
+                            <div id="result" class="mt-4 text-center" style="display:none;">
+                                <h5>Estimated Calories Burned:</h5>
+                                <h4><span id="calories-output" class="text-success"></span> kcal</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1618355281686-2b622387ada4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGVhbHRoJTIwYW5kJTIwZml0bmVzc3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Calorie Burn" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <br><br><br>
+
+
+    <script src="jquery-2.1.0.min.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="scrollreveal.min.js"></script>
+    <script src="waypoints.min.js"></script>
+    <script src="jquery.counterup.min.js"></script>
+    <script src="imgfix.min.js"></script>
+    <script src="mixitup.js"></script>
+    <script src="accordions.js"></script>
+    <script src="custom.js"></script>
+
+
+    <script>
+        function calculateCalories() {
+            const age = parseFloat(document.getElementById('age').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            const duration = parseFloat(document.getElementById('duration').value);
+            const activityLevel = parseFloat(document.getElementById('activity').value);
+    
+            if (!age || !weight || !duration || !activityLevel) {
+                alert('Please fill in all fields.');
+                return;
+            }
+    
+            // Basic formula: MET * weight (kg) * duration (hours)
+            const durationInHours = duration / 60;
+            const caloriesBurned = activityLevel * weight * durationInHours;
+    
+            document.getElementById('calories-output').textContent = caloriesBurned.toFixed(2);
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+    
+
+</body>
+
+</html>
